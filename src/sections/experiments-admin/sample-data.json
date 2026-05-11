@@ -1,0 +1,195 @@
+{
+  "_meta": {
+    "models": {
+      "experiment": "A structured comparison of one or more interventions against a baseline, with a hypothesis, an outcome metric, a time-series of results, and a decision the city has reached (or has not yet reached).",
+      "experimentIntervention": "A single intervention being compared inside an experiment. May be flagged as the baseline, which represents the 'do nothing different' control.",
+      "metric": "The single metric the experiment is measured against (label and unit) — for example, 'Litter items per week'.",
+      "seriesPoint": "One data point in an intervention's outcome series — a date label and a numeric value of the metric on that date.",
+      "outcomeSeries": "Per-intervention time series of metric values aligned to the same date axis. Each series is keyed to an interventionId from the experiment's interventions list.",
+      "decision": "The city's verdict on the experiment, the rationale behind it, and the recommended next action. May be undecided for experiments still running."
+    },
+    "relationships": [
+      "An experiment has many interventions; exactly one of them is the baseline (or none, for planned experiments not yet structured).",
+      "An experiment has one metric and one outcomeSeries.",
+      "outcomeSeries has one entry per interventionId in the experiment's interventions list.",
+      "An experiment has zero or one decision — concluded experiments have one, running and planned experiments may have none."
+    ]
+  },
+  "experiments": [
+    {
+      "id": "exp-painted-footprints",
+      "title": "Painted footprints to the bins",
+      "status": "running",
+      "startDate": "2026-04-15",
+      "endDate": "2026-06-15",
+      "hypothesis": "Bright lime footprints leading from the busiest seating area to the nearest bins will increase disposal rates and reduce litter accumulation in the south plaza.",
+      "summary": "Six-week field test against a no-paint baseline period (Mar 1 – Apr 14). Metric measured weekly across the south plaza only.",
+      "metric": { "label": "Litter items per week", "unit": "items" },
+      "interventions": [
+        { "id": "iv-baseline", "name": "Baseline (no paint)", "description": "Pre-intervention period with the square in its previous state. Used as the control reference.", "isBaseline": true },
+        { "id": "iv-footprints", "name": "Painted footprints", "description": "Bright lime footprints painted on the pavement from the south seating area to the nearest two waste bins.", "isBaseline": false }
+      ],
+      "outcomeSeries": {
+        "iv-baseline": [
+          { "date": "2026-03-08", "value": 1820 },
+          { "date": "2026-03-15", "value": 1764 },
+          { "date": "2026-03-22", "value": 1791 },
+          { "date": "2026-03-29", "value": 1808 },
+          { "date": "2026-04-05", "value": 1742 },
+          { "date": "2026-04-12", "value": 1786 }
+        ],
+        "iv-footprints": [
+          { "date": "2026-04-19", "value": 1612 },
+          { "date": "2026-04-26", "value": 1488 },
+          { "date": "2026-05-03", "value": 1421 }
+        ]
+      },
+      "decision": null
+    },
+    {
+      "id": "exp-voting-ashtrays",
+      "title": "Cigarette voting ashtrays",
+      "status": "running",
+      "startDate": "2026-04-22",
+      "endDate": "2026-07-22",
+      "hypothesis": "Transparent ashtrays posing a weekly question, where visitors vote with their butts, will increase ashtray disposal and reduce ground butts at the south entrance.",
+      "summary": "Two ashtrays at the south entrance, weekly question rotation. Metric is butts collected from the ground in the south entrance zone.",
+      "metric": { "label": "Ground butts per week", "unit": "butts" },
+      "interventions": [
+        { "id": "iv-baseline", "name": "Baseline (standard ashtrays)", "description": "Pre-intervention period with conventional ashtrays at the south entrance.", "isBaseline": true },
+        { "id": "iv-voting", "name": "Voting ashtrays", "description": "Transparent voting ashtrays with rotating weekly question, replacing the conventional pair.", "isBaseline": false }
+      ],
+      "outcomeSeries": {
+        "iv-baseline": [
+          { "date": "2026-03-15", "value": 980 },
+          { "date": "2026-03-22", "value": 1012 },
+          { "date": "2026-03-29", "value": 956 },
+          { "date": "2026-04-05", "value": 991 },
+          { "date": "2026-04-12", "value": 968 }
+        ],
+        "iv-voting": [
+          { "date": "2026-04-26", "value": 832 },
+          { "date": "2026-05-03", "value": 781 }
+        ]
+      },
+      "decision": null
+    },
+    {
+      "id": "exp-signage-rewrite",
+      "title": "Signage rewrite at north gate",
+      "status": "concluded",
+      "startDate": "2026-01-10",
+      "endDate": "2026-03-10",
+      "hypothesis": "Replacing the prohibitive 'no littering' sign with a humorous, gratitude-framed message will reduce litter in the north entrance area.",
+      "summary": "Eight-week test comparing the new sign against a six-week pre-intervention baseline. The new sign yielded a small but consistent reduction.",
+      "metric": { "label": "Litter items per week", "unit": "items" },
+      "interventions": [
+        { "id": "iv-baseline", "name": "Baseline (old sign)", "description": "Original 'no littering — fine €50' sign in place.", "isBaseline": true },
+        { "id": "iv-new-sign", "name": "Gratitude sign", "description": "Illustrated sign thanking visitors for keeping the square living and clean.", "isBaseline": false }
+      ],
+      "outcomeSeries": {
+        "iv-baseline": [
+          { "date": "2025-11-30", "value": 412 },
+          { "date": "2025-12-07", "value": 428 },
+          { "date": "2025-12-14", "value": 419 },
+          { "date": "2025-12-21", "value": 401 },
+          { "date": "2025-12-28", "value": 387 },
+          { "date": "2026-01-04", "value": 405 }
+        ],
+        "iv-new-sign": [
+          { "date": "2026-01-18", "value": 372 },
+          { "date": "2026-01-25", "value": 358 },
+          { "date": "2026-02-01", "value": 364 },
+          { "date": "2026-02-08", "value": 351 },
+          { "date": "2026-02-15", "value": 346 },
+          { "date": "2026-02-22", "value": 339 },
+          { "date": "2026-03-01", "value": 348 },
+          { "date": "2026-03-08", "value": 341 }
+        ]
+      },
+      "decision": {
+        "verdict": "keep",
+        "rationale": "Consistent ~15% reduction across eight weeks with no observed downsides. Effect is modest but durable, and the sign is essentially zero-cost to maintain.",
+        "action": "Roll the gratitude sign template out to the south and east entrances in Q3."
+      }
+    },
+    {
+      "id": "exp-night-bins",
+      "title": "Extra bins at night",
+      "status": "concluded",
+      "startDate": "2025-09-01",
+      "endDate": "2025-11-15",
+      "hypothesis": "Adding two temporary bins near the south seating area between 18:00 and 02:00 will reduce after-hours litter accumulation.",
+      "summary": "Ten-week test. Bins were used heavily but did not produce a statistically meaningful reduction in ground litter; cleaning crew reported the bins overflowed twice on weekends.",
+      "metric": { "label": "Litter items per week", "unit": "items" },
+      "interventions": [
+        { "id": "iv-baseline", "name": "Baseline (no extra bins)", "description": "Existing bin layout as configured before the test.", "isBaseline": true },
+        { "id": "iv-night-bins", "name": "Extra night bins", "description": "Two temporary bins placed near the south seating area, present 18:00–02:00.", "isBaseline": false }
+      ],
+      "outcomeSeries": {
+        "iv-baseline": [
+          { "date": "2025-07-06", "value": 1856 },
+          { "date": "2025-07-13", "value": 1902 },
+          { "date": "2025-07-20", "value": 1871 },
+          { "date": "2025-07-27", "value": 1888 },
+          { "date": "2025-08-03", "value": 1849 }
+        ],
+        "iv-night-bins": [
+          { "date": "2025-09-07", "value": 1834 },
+          { "date": "2025-09-14", "value": 1812 },
+          { "date": "2025-09-21", "value": 1859 },
+          { "date": "2025-09-28", "value": 1841 },
+          { "date": "2025-10-05", "value": 1827 },
+          { "date": "2025-10-12", "value": 1856 },
+          { "date": "2025-10-19", "value": 1872 },
+          { "date": "2025-10-26", "value": 1845 },
+          { "date": "2025-11-02", "value": 1828 },
+          { "date": "2025-11-09", "value": 1851 }
+        ]
+      },
+      "decision": {
+        "verdict": "kill",
+        "rationale": "No meaningful reduction in litter, plus operational burden from overflow. Bins are heavily used but appear to displace rather than capture additional waste.",
+        "action": "Remove the temporary bins. Reroute the resources into the painted-footprints test in Q2."
+      }
+    },
+    {
+      "id": "exp-summer-evening-cleaning",
+      "title": "Summer evening cleaning shift",
+      "status": "planned",
+      "startDate": "2026-06-01",
+      "endDate": "2026-08-31",
+      "hypothesis": "Extending Friday and Saturday cleaning to 22:00 during the summer high-traffic season will reduce Saturday- and Sunday-morning litter visible to early visitors.",
+      "summary": "Three-month pilot scheduled to start June 1. Metric will be Saturday/Sunday 8:00 ground-litter count.",
+      "metric": { "label": "Weekend morning litter count", "unit": "items" },
+      "interventions": [
+        { "id": "iv-baseline", "name": "Baseline (current schedule)", "description": "Current cleaning schedule ending at 19:00 on Friday and Saturday.", "isBaseline": true },
+        { "id": "iv-late-evening", "name": "Late-evening cleaning", "description": "Extend Friday and Saturday cleaning to 22:00 throughout June, July, and August.", "isBaseline": false }
+      ],
+      "outcomeSeries": {
+        "iv-baseline": [],
+        "iv-late-evening": []
+      },
+      "decision": null
+    },
+    {
+      "id": "exp-weekly-citizen-sweep",
+      "title": "Saturday citizen sweep ritual",
+      "status": "planned",
+      "startDate": "2026-06-07",
+      "endDate": "2026-09-07",
+      "hypothesis": "A volunteer-led 30-minute sweep every Saturday at 9:00, anchored by a coffee reward at the corner café, will create visible weekly cleanliness improvements and shift visitor attitudes toward the square as cared-for.",
+      "summary": "Twelve-week pilot. Two metrics: ground-litter count Saturday 9:30 vs. 9:00, and a short post-sweep visitor sentiment intercept.",
+      "metric": { "label": "Litter items collected per sweep", "unit": "items" },
+      "interventions": [
+        { "id": "iv-baseline", "name": "Baseline (no organized sweep)", "description": "Saturdays as currently observed, with no organized volunteer activity.", "isBaseline": true },
+        { "id": "iv-citizen-sweep", "name": "Saturday citizen sweep", "description": "Weekly 30-minute volunteer-led sweep starting at 9:00, with coffee reward at the partnering café.", "isBaseline": false }
+      ],
+      "outcomeSeries": {
+        "iv-baseline": [],
+        "iv-citizen-sweep": []
+      },
+      "decision": null
+    }
+  ]
+}
