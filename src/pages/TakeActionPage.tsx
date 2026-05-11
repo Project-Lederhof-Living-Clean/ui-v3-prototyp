@@ -1,5 +1,9 @@
-import { PlaceholderPage } from './PlaceholderPage'
+import { TakeAction } from '../sections/take-action'
+import type { TakeActionProps } from '../sections/take-action/types'
+import sampleData from '../sections/take-action/sample-data.json'
+
+const data = sampleData as unknown as TakeActionProps
 
 export function TakeActionPage() {
-  return <PlaceholderPage title="Take Action" description="Citizen-facing prompts and commitments." />
+  return <TakeAction intro={data.intro} suggestions={data.suggestions} />
 }

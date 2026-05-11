@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "models": {
+      "intro": "The short framing block at the top of the page — a headline and one-line subhead that set up the suggestions.",
+      "suggestion": "A single inspirational behavior card. Has a title, a short or longer description, and an icon name (lucide-react) shown at the top of the card. No completion or submission state — purely informational."
+    },
+    "relationships": [
+      "The page has one intro and a list of suggestion records displayed in order.",
+      "Suggestions are independent of each other — there is no state shared between them."
+    ]
+  },
+  "intro": {
+    "headline": "Small acts. Lived square.",
+    "subhead": "Three quiet ways to keep the Lederhof living and clean. Pick one that fits how you already move through the square."
+  },
+  "suggestions": [
+    {
+      "id": "suggestion-bin",
+      "title": "Carry it to the bin",
+      "description": "Hold on to your butt, your wrapper, your cup until you reach a bin. It's usually less than thirty seconds of walking — and it's the single behavior that moves the numbers most.",
+      "icon": "Trash2"
+    },
+    {
+      "id": "suggestion-pickup",
+      "title": "Pick up one piece",
+      "description": "Each time you cross the square, pick up one piece of litter that isn't yours and bin it. One person, one piece, every visit. The math is unreasonably good: at the Lederhof's daily foot traffic, this single habit removes more litter than the city's nightly cleaning crew.",
+      "icon": "HandHeart"
+    },
+    {
+      "id": "suggestion-tell",
+      "title": "Mention it once",
+      "description": "Tell one friend that the Lederhof is being looked after now. Identity follows attention — the more people who see the square as cared-for, the fewer who treat it as already lost.",
+      "icon": "MessageCircle"
+    }
+  ]
+}
