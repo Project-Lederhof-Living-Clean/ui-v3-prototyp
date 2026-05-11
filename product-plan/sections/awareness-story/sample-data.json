@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "models": {
+      "story": "The Awareness Story as a whole — an ordered sequence of slides plus playback configuration (default duration per slide, whether autoplay is enabled at start).",
+      "slide": "A single slide in the story. Has a type that controls layout, a headline, optional supporting text, and slide-type-specific data (figure for stat slides, items for breakdown slides, cta for the closing slide).",
+      "figure": "A single large statistic shown on a stat slide — a number, an optional unit, and a short caption explaining what it counts.",
+      "breakdownItem": "One row in a breakdown slide — a category label with a count and an optional short description.",
+      "cta": "The single call-to-action shown on the closing slide — label and href."
+    },
+    "relationships": [
+      "story has a list of slides played in order.",
+      "A stat slide has one figure.",
+      "A breakdown slide has many breakdownItem records.",
+      "A cta slide has one cta record."
+    ]
+  },
+  "story": {
+    "autoplay": true,
+    "defaultDurationMs": 6000,
+    "slides": [
+      {
+        "id": "slide-1",
+        "type": "title",
+        "headline": "Living Clean",
+        "supportingText": "A factual look at what the Lederhof leaves behind every week — and what we can do about it.",
+        "durationMs": 4500
+      },
+      {
+        "id": "slide-2",
+        "type": "stat",
+        "headline": "Every week on the Lederhof",
+        "supportingText": "Counted by the city's automated detection across the whole square, averaged over the last 12 weeks.",
+        "figure": {
+          "value": 1742,
+          "unit": "litter items",
+          "caption": "left behind every single week"
+        },
+        "durationMs": 7000
+      },
+      {
+        "id": "slide-3",
+        "type": "breakdown",
+        "headline": "What gets left behind",
+        "supportingText": "A typical week, broken down by category.",
+        "items": [
+          {
+            "label": "Cigarette butts",
+            "count": 1118,
+            "description": "By far the largest category. Most accumulate around the seating areas and the south entrance."
+          },
+          {
+            "label": "Food packaging",
+            "count": 312,
+            "description": "Wrappers, cups, takeaway containers — peaking in the early afternoon."
+          },
+          {
+            "label": "General waste",
+            "count": 248,
+            "description": "Tissues, receipts, small paper and plastic fragments."
+          },
+          {
+            "label": "Drug paraphernalia",
+            "count": 64,
+            "description": "Concentrated near the north corner; cleaned with elevated safety protocols."
+          }
+        ],
+        "durationMs": 9000
+      },
+      {
+        "id": "slide-4",
+        "type": "stat",
+        "headline": "Across a year",
+        "supportingText": "What the weekly number compounds to.",
+        "figure": {
+          "value": 90584,
+          "unit": "items",
+          "caption": "dropped on a square the size of a small city block"
+        },
+        "durationMs": 6000
+      },
+      {
+        "id": "slide-5",
+        "type": "stat",
+        "headline": "And someone picks them up",
+        "supportingText": "City cleaning crews log every operation. The work is real.",
+        "figure": {
+          "value": 1284,
+          "unit": "person-hours",
+          "caption": "spent cleaning the Lederhof in the last 12 months"
+        },
+        "durationMs": 6000
+      },
+      {
+        "id": "slide-6",
+        "type": "cta",
+        "headline": "It doesn't have to look like this.",
+        "supportingText": "Small actions, repeated, change a square's identity.",
+        "cta": {
+          "label": "Take Action",
+          "href": "/take-action"
+        },
+        "durationMs": 8000
+      }
+    ]
+  }
+}

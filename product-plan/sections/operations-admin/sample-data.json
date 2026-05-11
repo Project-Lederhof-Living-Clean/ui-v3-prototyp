@@ -1,0 +1,172 @@
+{
+  "_meta": {
+    "models": {
+      "summary": "The single headline number at the top of the page — total items collected in the currently selected period — with a caption describing the period.",
+      "operation": "A cleaning operation logged on the Lederhof. Can be single-session (one date, one duration) or long-term (date range across several weeks with cumulative duration). Carries an items-collected breakdown by category and a status.",
+      "itemsBreakdown": "Per-category counts of items collected during the operation. Categories mirror the system-wide litter taxonomy (cigarettes, food packaging, general waste, paraphernalia)."
+    },
+    "relationships": [
+      "An operation has exactly one itemsBreakdown.",
+      "summary is independent of operations and reflects whatever date range the admin has currently filtered to."
+    ]
+  },
+  "summary": {
+    "value": 8421,
+    "label": "items collected",
+    "periodLabel": "in the last 30 days"
+  },
+  "operations": [
+    {
+      "id": "op-2026-05-06",
+      "title": "Tuesday evening cleaning",
+      "type": "single-session",
+      "startDate": "2026-05-06T18:00:00",
+      "endDate": "2026-05-06T19:30:00",
+      "durationHours": 1.5,
+      "itemsCollected": {
+        "total": 218,
+        "breakdown": {
+          "cigarettes": 142,
+          "foodPackaging": 38,
+          "generalWaste": 31,
+          "paraphernalia": 7
+        }
+      },
+      "status": "completed",
+      "notes": "Higher-than-average butt count in the south seating area."
+    },
+    {
+      "id": "op-2026-05-04",
+      "title": "Sunday morning sweep",
+      "type": "single-session",
+      "startDate": "2026-05-04T07:00:00",
+      "endDate": "2026-05-04T09:00:00",
+      "durationHours": 2,
+      "itemsCollected": {
+        "total": 312,
+        "breakdown": {
+          "cigarettes": 187,
+          "foodPackaging": 64,
+          "generalWaste": 51,
+          "paraphernalia": 10
+        }
+      },
+      "status": "completed",
+      "notes": ""
+    },
+    {
+      "id": "op-2026-04-q2-deep",
+      "title": "Q2 deep-clean of pavement joints",
+      "type": "long-term",
+      "startDate": "2026-04-01",
+      "endDate": "2026-05-15",
+      "durationHours": 84,
+      "itemsCollected": {
+        "total": 4612,
+        "breakdown": {
+          "cigarettes": 3984,
+          "foodPackaging": 312,
+          "generalWaste": 264,
+          "paraphernalia": 52
+        }
+      },
+      "status": "in-progress",
+      "notes": "Rolling six-week operation focused on cigarette butts trapped between paving stones across the central plaza. Cumulative hours and items collected accrue weekly; expected to conclude on schedule."
+    },
+    {
+      "id": "op-2026-05-02",
+      "title": "Friday afternoon pickup",
+      "type": "single-session",
+      "startDate": "2026-05-02T15:00:00",
+      "endDate": "2026-05-02T16:00:00",
+      "durationHours": 1,
+      "itemsCollected": {
+        "total": 156,
+        "breakdown": {
+          "cigarettes": 89,
+          "foodPackaging": 41,
+          "generalWaste": 23,
+          "paraphernalia": 3
+        }
+      },
+      "status": "completed",
+      "notes": ""
+    },
+    {
+      "id": "op-2026-04-29",
+      "title": "Wednesday evening cleaning",
+      "type": "single-session",
+      "startDate": "2026-04-29T18:00:00",
+      "endDate": "2026-04-29T19:00:00",
+      "durationHours": 1,
+      "itemsCollected": {
+        "total": 184,
+        "breakdown": {
+          "cigarettes": 118,
+          "foodPackaging": 36,
+          "generalWaste": 26,
+          "paraphernalia": 4
+        }
+      },
+      "status": "completed",
+      "notes": ""
+    },
+    {
+      "id": "op-2026-05-09",
+      "title": "Saturday citizen sweep — supported",
+      "type": "single-session",
+      "startDate": "2026-05-09T09:00:00",
+      "endDate": "2026-05-09T09:30:00",
+      "durationHours": 0.5,
+      "itemsCollected": {
+        "total": 0,
+        "breakdown": {
+          "cigarettes": 0,
+          "foodPackaging": 0,
+          "generalWaste": 0,
+          "paraphernalia": 0
+        }
+      },
+      "status": "scheduled",
+      "notes": "City crew supports the volunteer-led Saturday sweep with bags and disposal."
+    },
+    {
+      "id": "op-2026-05-13",
+      "title": "Mid-month night cleaning",
+      "type": "single-session",
+      "startDate": "2026-05-13T22:00:00",
+      "endDate": "2026-05-13T23:30:00",
+      "durationHours": 1.5,
+      "itemsCollected": {
+        "total": 0,
+        "breakdown": {
+          "cigarettes": 0,
+          "foodPackaging": 0,
+          "generalWaste": 0,
+          "paraphernalia": 0
+        }
+      },
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "op-2026-summer-pilot",
+      "title": "Summer evening pilot — extended cleaning",
+      "type": "long-term",
+      "startDate": "2026-06-01",
+      "endDate": "2026-08-31",
+      "durationHours": 0,
+      "itemsCollected": {
+        "total": 0,
+        "breakdown": {
+          "cigarettes": 0,
+          "foodPackaging": 0,
+          "generalWaste": 0,
+          "paraphernalia": 0
+        }
+      },
+      "status": "scheduled",
+      "notes": "Three-month pilot extending evening cleaning to 22:00 on Fridays and Saturdays during the high-traffic summer season."
+    }
+  ]
+}

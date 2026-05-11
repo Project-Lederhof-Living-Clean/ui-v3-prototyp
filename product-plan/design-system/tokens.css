@@ -1,0 +1,13 @@
+/* Design Tokens for Living Clean */
+
+:root {
+  /* Colors — Tailwind palettes */
+  --color-primary: blue;     /* used for buttons, links, key accents, active nav */
+  --color-secondary: lime;   /* used for tags, "concluded" status, admin badges */
+  --color-neutral: stone;    /* used for backgrounds, text, borders */
+
+  /* Typography */
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}

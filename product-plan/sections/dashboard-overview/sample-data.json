@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "models": {
+      "headlineStat": "The single headline metric for today — total litter items detected on the Lederhof, with the change vs. yesterday and a 14-day sparkline.",
+      "trendPoint": "A single point in the trend-over-time chart — one calendar date and the litter count detected on that date.",
+      "intervention": "A currently running measure on the square — campaign, signage, design change, or new bin placement — with a title, short description, and start date.",
+      "heroCta": "The single primary call-to-action shown under the headline stat, sending the visitor to the Take Action section."
+    },
+    "relationships": [
+      "headlineStat is independent — one record represents 'today'.",
+      "trend is an ordered list of trendPoint records, one per day, oldest first.",
+      "activeInterventions is a list of intervention records currently in flight.",
+      "heroCta is a single record with a label and an href."
+    ]
+  },
+  "headlineStat": {
+    "date": "2026-05-07",
+    "count": 184,
+    "label": "pieces of litter detected on the Lederhof today",
+    "deltaVsYesterday": -22,
+    "deltaDirection": "down",
+    "sparkline": [218, 241, 232, 196, 207, 224, 238, 251, 229, 215, 198, 206, 192, 184]
+  },
+  "trend": [
+    { "date": "2026-04-08", "count": 268 },
+    { "date": "2026-04-09", "count": 281 },
+    { "date": "2026-04-10", "count": 295 },
+    { "date": "2026-04-11", "count": 312 },
+    { "date": "2026-04-12", "count": 287 },
+    { "date": "2026-04-13", "count": 263 },
+    { "date": "2026-04-14", "count": 254 },
+    { "date": "2026-04-15", "count": 247 },
+    { "date": "2026-04-16", "count": 239 },
+    { "date": "2026-04-17", "count": 231 },
+    { "date": "2026-04-18", "count": 245 },
+    { "date": "2026-04-19", "count": 238 },
+    { "date": "2026-04-20", "count": 226 },
+    { "date": "2026-04-21", "count": 218 },
+    { "date": "2026-04-22", "count": 241 },
+    { "date": "2026-04-23", "count": 232 },
+    { "date": "2026-04-24", "count": 196 },
+    { "date": "2026-04-25", "count": 207 },
+    { "date": "2026-04-26", "count": 224 },
+    { "date": "2026-04-27", "count": 238 },
+    { "date": "2026-04-28", "count": 251 },
+    { "date": "2026-04-29", "count": 229 },
+    { "date": "2026-04-30", "count": 215 },
+    { "date": "2026-05-01", "count": 198 },
+    { "date": "2026-05-02", "count": 206 },
+    { "date": "2026-05-03", "count": 192 },
+    { "date": "2026-05-04", "count": 201 },
+    { "date": "2026-05-05", "count": 195 },
+    { "date": "2026-05-06", "count": 206 },
+    { "date": "2026-05-07", "count": 184 }
+  ],
+  "activeInterventions": [
+    {
+      "id": "int-001",
+      "title": "Painted footprints to the bins",
+      "description": "Bright lime footprints on the pavement leading visitors from the busiest seating area to the nearest waste bins, nudging disposal at the moment of leaving.",
+      "startDate": "2026-04-15",
+      "status": "running"
+    },
+    {
+      "id": "int-002",
+      "title": "Cigarette voting ashtrays",
+      "description": "Two transparent ashtrays at the south entrance posing a playful weekly question; visitors vote with their butts. Designed to convert disposal into a small act of identity.",
+      "startDate": "2026-04-22",
+      "status": "running"
+    },
+    {
+      "id": "int-003",
+      "title": "Saturday-morning citizen sweep",
+      "description": "Volunteer-led 30-minute cleaning ritual every Saturday at 9:00, with a coffee reward at the corner café. Currently in week 3 of a six-week pilot.",
+      "startDate": "2026-04-18",
+      "status": "running"
+    },
+    {
+      "id": "int-004",
+      "title": "Reframed signage at north gate",
+      "description": "Replaced the old 'no littering' sign with a humorous illustration thanking visitors for keeping the square living and clean.",
+      "startDate": "2026-05-01",
+      "status": "running"
+    }
+  ],
+  "heroCta": {
+    "label": "Take Action",
+    "href": "/take-action"
+  }
+}
